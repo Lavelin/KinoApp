@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 
-namespace KinioApp.Models
+namespace KinioApp.Models.Data
 {
     public class User : IdentityUser
     {
@@ -13,6 +13,6 @@ namespace KinioApp.Models
 
         [Required(ErrorMessage = "Введите имя")]
         [Display(Name = "Имя")]
-        public string FirstName { get; set; } 
+        public string FirstName { get; set; }
     }
 }
