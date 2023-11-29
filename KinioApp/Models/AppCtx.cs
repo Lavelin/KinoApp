@@ -11,5 +11,8 @@ namespace KinioApp.Models
         {
             Database.EnsureCreated();
         }
+
+        public DbSet<GenreKino> GenresKino { get; set; }
+
     }
-}
+}  

@@ -1,0 +1,26 @@
+﻿   @model KinioApp.Models.Data.GenreKino
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h3>
+    <a class="btn text-dark" asp-action="Index" title="Вернуться к списку">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+    Просмотр жанра
+</h3>
+
+<div>
+    <h4>GenreKino</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.Genre)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+    </dl>
+</div>
+
