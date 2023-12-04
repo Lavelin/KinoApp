@@ -1,5 +1,6 @@
 ﻿using KinioApp.Models.Data;
 using KinioApp.ViesModels.Account;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
