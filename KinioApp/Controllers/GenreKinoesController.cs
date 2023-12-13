@@ -66,7 +66,7 @@ namespace KinioApp.Controllers
         } 
 
         // GET: GenreKinoes/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(short? id)
         {
             if (id == null || _context.GenresKino == null)
             {
@@ -92,7 +92,7 @@ namespace KinioApp.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, EditGenreKinoViewModel model)
+        public async Task<IActionResult> Edit(short id, EditGenreKinoViewModel model)
         {
             if (_context.GenresKino
                .Where(f => f.Genre == model.Genre).FirstOrDefault() != null)
@@ -132,7 +132,7 @@ namespace KinioApp.Controllers
         }
 
         // GET: GenreKinoes/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(short? id)
         {
             if (id == null || _context.GenresKino == null)
             {
@@ -152,7 +152,7 @@ namespace KinioApp.Controllers
         // POST: GenreKinoes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(short id)
         {
             if (_context.GenresKino == null)
             {
@@ -169,7 +169,7 @@ namespace KinioApp.Controllers
         }
 
         // GET: GenreKinoes/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(short? id)
         {
             if (id == null || _context.GenresKino == null)
             {
@@ -186,7 +186,7 @@ namespace KinioApp.Controllers
             return View(genreKino);
         }
 
-        private bool GenreKinoExists(int id)
+        private bool GenreKinoExists(short id)
         {
           return (_context.GenresKino?.Any(e => e.Id == id)).GetValueOrDefault();
         }

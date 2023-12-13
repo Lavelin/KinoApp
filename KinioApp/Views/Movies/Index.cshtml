@@ -1,0 +1,94 @@
+﻿@model IEnumerable<KinioApp.Models.Data.Movie>
+
+@{
+    ViewData["Title"] = "Фильмы";
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Главная</a></li>
+        <li class="breadcrumb-item"><a asp-controller="Movies" asp-action="Index">Фильмы</a></li>
+    </ol>
+</nav>
+<h2>Фильмы</h2>
+
+<h6>
+    <a class="btn text-dark" asp-action="Create">
+        <i class="far fa-plus-square"></i>  Добавить фильм
+    </a>
+</h6>
+
+<div class="table-responsive">
+    <table class="table table-bordered text-nowrap table-sm">
+        <thead class="thead-light">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CountryMovie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YearMovie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GenreKino.Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DurationMovie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartOfRentalMovie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndOfRentalMovie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalCompanyMovie)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryMovie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YearMovie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GenreKino.Genre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DurationMovie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartOfRentalMovie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndOfRentalMovie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RentalCompanyMovie)
+            </td>
+            <td>
+                <a class="btn text-dark" asp-action="Details" asp-route-id="@item.Id" title="Посмотреть подробнее">
+                    <i class="far fa-eye"></i>
+                </a> |
+                <a class="btn text-dark" asp-action="Edit" asp-route-id="@item.Id" title="Редактировать">
+                    <i class="fas fa-pencil-alt"></i>
+                </a> |
+                <a class="btn text-dark" asp-action="Delete" asp-route-id="@item.Id" title="Удалить">
+                    <i class="far fa-minus-square"></i>
+                </a>
+            </td>
+        </tr>
+}
+    </tbody>
+    </table>
+</div>

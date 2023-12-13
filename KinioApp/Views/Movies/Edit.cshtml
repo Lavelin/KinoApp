@@ -1,0 +1,81 @@
+﻿@model KinioApp.ViesModels.Movies.EditMoviesViewModel
+
+@{
+    ViewData["Title"] = "Изменение - фильма";
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Главная</a></li>
+        <li class="breadcrumb-item"><a asp-controller="Movies" asp-action="Index">Фильмы</a></li>
+        <li class="breadcrumb-item active">Изменение</li>
+    </ol>
+</nav>
+
+<h3>
+    <a class="btn text-dark" asp-action="Index" title="Вернуться к списку">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+    Изменение фильма
+</h3>
+<hr />
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="MovieTitle" class="control-label"></label>
+                <input asp-for="MovieTitle" class="form-control" />
+                <span asp-validation-for="MovieTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CountryMovie" class="control-label"></label>
+                <input asp-for="CountryMovie" class="form-control" />
+                <span asp-validation-for="CountryMovie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YearMovie" class="control-label"></label>
+                <input asp-for="YearMovie" class="form-control" />
+                <span asp-validation-for="YearMovie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GenreId" class="control-label"></label>
+                <select asp-for="GenreId" class="form-control" asp-items="ViewBag.GenreId"></select>
+                <span asp-validation-for="GenreId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DurationMovie" class="control-label"></label>
+                <input asp-for="DurationMovie" class="form-control" />
+                <span asp-validation-for="DurationMovie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartOfRentalMovie" class="control-label"></label>
+                <input asp-for="StartOfRentalMovie" class="form-control" />
+                <span asp-validation-for="StartOfRentalMovie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndOfRentalMovie" class="control-label"></label>
+                <input asp-for="EndOfRentalMovie" class="form-control" />
+                <span asp-validation-for="EndOfRentalMovie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RentalCompanyMovie" class="control-label"></label>
+                <input asp-for="RentalCompanyMovie" class="form-control" />
+                <span asp-validation-for="RentalCompanyMovie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

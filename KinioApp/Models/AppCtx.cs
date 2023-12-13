@@ -14,5 +14,8 @@ namespace KinioApp.Models
 
         public DbSet<GenreKino> GenresKino { get; set; }
 
+        public DbSet<Movie> Movies { get; set; }
+
+        public DbSet<Session> Sessions { get; set; }
     }
 }  

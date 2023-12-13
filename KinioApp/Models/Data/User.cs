@@ -14,5 +14,9 @@ namespace KinioApp.Models.Data
         [Required(ErrorMessage = "Введите имя")]
         [Display(Name = "Имя")]
         public string FirstName { get; set; }
+
+        //навигационные свойства
+        [Required]
+        public ICollection<GenreKino> GenreKino { get; set; }
     }
 }
